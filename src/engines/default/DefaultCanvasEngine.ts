@@ -35,6 +35,10 @@ export class DefaultCanvasEngine {
         this.state = DefaultCanvasEngine.createNewCanvasState(width, height);
     }
 
+    public getState(): DefaultCanvasState {
+        return this.state;
+    }
+
     /**
      * Instantiates a new {@link DefaultCanvasEngine} along with the given painters.
      * @param width the width in pixels of the canvas
@@ -91,7 +95,8 @@ export class DefaultCanvasEngine {
 
         // Run the painter
         painter.exports.next(this.state, x, y);
-        const color = painter.exports.getLastActionColor();
+        
+        const color = painter.exports.getLastActionColor() >>> 0; // Convert to unsigned int
         const direction = painter.exports.getLastActionDirection();
 
         // Update the color of the canvas
@@ -100,16 +105,16 @@ export class DefaultCanvasEngine {
         // Update the position of the painter
         switch (direction) {
             case PainterDirection.Up:
-                this.painterPositions[painterIndex].y--;
+                this.painterPositions[painterIndex].y = y < 1 ? this.height - 1 : y - 1;
                 break;
             case PainterDirection.Down:
-                this.painterPositions[painterIndex].y++;
+                this.painterPositions[painterIndex].y = y >= this.height - 1 ? 0 : y + 1;
                 break;
             case PainterDirection.Left:
-                this.painterPositions[painterIndex].x--;
+                this.painterPositions[painterIndex].x = x < 1 ? this.width - 1 : x - 1;
                 break;
             case PainterDirection.Right:
-                this.painterPositions[painterIndex].x++;
+                this.painterPositions[painterIndex].x = x >= this.width - 1 ? 0 : x + 1;
                 break;
         }
 
