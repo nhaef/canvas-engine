@@ -24,6 +24,8 @@ export class DefaultCanvasEngine {
      * @param painters the painters to use
      */
     private constructor(width: number, height: number) {
+        if (width < 1 || height < 1) throw new Error("Invalid canvas size");
+
         this.tick = 0;
         this.width = width;
         this.height = height;
@@ -41,6 +43,8 @@ export class DefaultCanvasEngine {
      * @returns the new canvas engine instance
      */
     public static async newInstance(width: number, height: number, painterModules: WebAssembly.Module[]): Promise<DefaultCanvasEngine> {
+        if (painterModules.length < 1) throw new Error("No painters provided");
+        
         const engine = new DefaultCanvasEngine(width, height);
         for (const painterModule of painterModules) {
             await engine.addPainter(painterModule);

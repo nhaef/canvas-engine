@@ -100,4 +100,7 @@
   "include": [
     "src/**/*.ts"
   ],
+  "exclude": [
+    "src/**/*.as.ts"
+  ]
 }
