@@ -4,9 +4,10 @@
   "description": "This tool is able to run one or multiple panting drones, collectively painting on a canvas.",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build:dev": "tsc -p tsconfig.json",
+    "build:prod": "tsc -p tsconfig.prod.json",
     "test": "jest",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build:prod"
   },
   "repository": {
     "type": "git",
