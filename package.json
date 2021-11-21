@@ -1,0 +1,29 @@
+{
+  "name": "painting-drone",
+  "version": "1.0.0",
+  "description": "This tool is able to run one or multiple panting drones, collectively painting on a canvas.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:asc": "asc templates/default-painter.ts -t templates/asc.wat -b templates/asc.wasm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhaef/painting-drone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nhaef/painting-drone/issues"
+  },
+  "homepage": "https://github.com/nhaef/painting-drone#readme",
+  "devDependencies": {
+    "@types/jimp": "^0.2.28",
+    "@types/node": "^16.11.7",
+    "assemblyscript": "^0.19.20",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "jimp": "^0.16.1"
+  }
+}
