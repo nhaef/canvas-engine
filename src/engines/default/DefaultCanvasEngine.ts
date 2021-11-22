@@ -35,6 +35,14 @@ export class DefaultCanvasEngine {
         this.state = DefaultCanvasEngine.createNewCanvasState(width, height);
     }
 
+    public getWidth(): number {
+        return this.width;
+    }
+
+    public getHeight(): number {
+        return this.height;
+    }
+
     public getState(): DefaultCanvasState {
         return this.state;
     }
