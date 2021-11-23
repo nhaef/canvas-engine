@@ -35,6 +35,10 @@ export class DefaultCanvasEngine {
         this.state = DefaultCanvasEngine.createNewCanvasState(width, height);
     }
 
+    public getTick(): number {
+        return this.tick;
+    }
+
     public getWidth(): number {
         return this.width;
     }
