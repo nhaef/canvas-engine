@@ -239,3 +239,23 @@ it("Should simulate duo ticks correctly", async () => {
         [WHITE, RED, WHITE]
     ]);
 });
+
+it("Should count ticks correctly", async () => {
+    const engine = await DefaultCanvasEngine.newInstance(3, 3, [exampleModuleRedDown, exampleModuleGreenRight]);
+
+    expect(engine.getTick()).toEqual(0);
+
+    engine.runNextTick();
+    engine.runNextTick();
+    engine.runNextTick();
+
+    expect(engine.getTick()).toEqual(3);
+
+    engine.runNextTick();
+    engine.runNextTick();
+    engine.runNextTick();
+    engine.runNextTick();
+    engine.runNextTick();
+
+    expect(engine.getTick()).toEqual(8);
+});
