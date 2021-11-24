@@ -1,11 +1,15 @@
-import { DefaultCanvasEngine } from "./engines/default/DefaultCanvasEngine";
-import { DefaultCanvasState } from "./engines/default/DefaultCanvasState";
-import { DefaultPainter } from "./engines/default/DefaultPainter";
-import { PainterDirection } from "./PainterDirection";
+import { Direction } from "./engine/types/Direction";
+import { CanvasEngineType } from "./engine/types/CanvasEngineType";
+
+import { DefaultCanvasEngine } from "./engine/default/DefaultCanvasEngine";
+import { DefaultPainterInstance } from "./engine/default/DefaultPainterInstance";
+import { DefaultPainterModule } from "./engine/default/DefaultPainterModule";
 
 export {
-    PainterDirection,
+    Direction,
+    CanvasEngineType,
+
     DefaultCanvasEngine,
-    DefaultCanvasState,
-    DefaultPainter
+    DefaultPainterInstance,
+    DefaultPainterModule
 };
