@@ -38,6 +38,14 @@ export class DefaultCanvasEngine extends CanvasEngine {
         return this.step;
     }
 
+    public getWidth(): number {
+        return this.width;
+    }
+
+    public getHeight(): number {
+        return this.height;
+    }
+
     public next(): void {
         const painterIndex = this.step % this.painters.length;
         const painter = this.painters[painterIndex];

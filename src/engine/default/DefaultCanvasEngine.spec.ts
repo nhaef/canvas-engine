@@ -55,6 +55,15 @@ it("Should not fail when instantiating", () => {
     expect(() => new DefaultCanvasEngine(3, 3, [mockPainterInstanceRedLeft, mockPainterInstanceGreenDown])).not.toThrow();
 });
 
+it("Should return width and height correctly", () => {
+    expect.assertions(2);
+
+    const engine = new DefaultCanvasEngine(101, 202, [mockPainterInstanceRedLeft]);
+
+    expect(engine.getWidth()).toBe(101);
+    expect(engine.getHeight()).toBe(202);
+});
+
 it("Should simulate solo-ticks correctly", () => {
     expect.assertions(6);
 
