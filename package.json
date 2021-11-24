@@ -1,5 +1,5 @@
 {
-  "name": "painting-drone",
+  "name": "canvas-engine",
   "version": "1.0.0",
   "description": "This tool is able to run one or multiple panting drones, collectively painting on a canvas.",
   "main": "dist/index.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nhaef/painting-drone.git"
+    "url": "git+https://github.com/nhaef/canvas-engine.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nhaef/painting-drone/issues"
+    "url": "https://github.com/nhaef/canvas-engine/issues"
   },
-  "homepage": "https://github.com/nhaef/painting-drone#readme",
+  "homepage": "https://github.com/nhaef/canvas-engine#readme",
   "devDependencies": {
     "@types/jest": "^27.0.3",
     "@types/node": "^16.11.7",
